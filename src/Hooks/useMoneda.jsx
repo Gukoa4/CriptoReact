@@ -23,12 +23,12 @@ const Select = styled.select`
 
 
 const useMoneda = (label, stateInicial, opciones) => {
-  const [state, actulizarState] = useState("stateInicial");
+  const [state, actualizarState] = useState("");
 
   const Seleccionar = () => (
     <Fragment>
       <Label>{label}</Label>
-      <Select onChange={(e) => actulizarState(e.target.value)} value={state}>
+      <Select onChange={(e) => actualizarState(e.target.value)} value={state}>
         <option value="">-- Seleccione --</option>
         {opciones.map((opcion) => (
           <option key={opcion.codigo} value={opcion.codigo}>
@@ -40,7 +40,7 @@ const useMoneda = (label, stateInicial, opciones) => {
     </Fragment>
   );
   //retornar state,interfaz y funcion
-  return [state, Seleccionar, actulizarState];
+  return [state, Seleccionar, actualizarState];
 };
 
 export default useMoneda;
